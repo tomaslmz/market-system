@@ -2,6 +2,7 @@ version: "3.8"
 services:
   database:
     image: postgres
+    tty: true
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -12,6 +13,7 @@ services:
     build:
       context: ./backend
       dockerfile: ./Dockerfile
+    tty: true
     ports:
       - 8000:8000
 volumes:
