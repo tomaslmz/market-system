@@ -16,12 +16,16 @@ services:
     tty: true
     ports:
       - 8000:8000
+    depends_on:
+      - database
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     tty: true
     ports:
-      - 5173:5173
+      - 7000:7000
+    depends_on:
+      - backend
 volumes:
   postgres_data:
