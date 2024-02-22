@@ -136,7 +136,7 @@ class ProductController {
 
       if (typeof min !== 'string' || typeof max !== 'string') {
         throw new Error('Min and max must be provided as strings');
-    }
+      }
 
       const products = await new ProductRepo().listByPrice(parseFloat(min), parseFloat(max));
 

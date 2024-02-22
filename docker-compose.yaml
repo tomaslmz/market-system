@@ -18,14 +18,21 @@ services:
       - 8000:8000
     depends_on:
       - database
+    volumes:
+      - ./backend:/usr/src/app:delegated
+      - /usr/src/app/node_modules
   frontend:
     build:
       context: ./frontend
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
+    stdin_open: true
     tty: true
     ports:
       - 7000:7000
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/usr/src/app:delegated
+      - /usr/src/app/node_modules
 volumes:
   postgres_data:
