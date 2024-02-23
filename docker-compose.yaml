@@ -33,6 +33,5 @@ services:
       - backend
     volumes:
       - ./frontend:/usr/src/app:delegated
-      - /usr/src/app/node_modules
 volumes:
   postgres_data:
