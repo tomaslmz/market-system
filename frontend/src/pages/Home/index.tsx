@@ -1,3 +1,4 @@
+import { Toaster } from 'sonner';
 import Header from '../../components/Header';
 import './index.css';
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Header />
       <h1>Home!</h1>
+      <Toaster />
     </>
   );
 }

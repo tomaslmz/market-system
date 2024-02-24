@@ -1,6 +1,6 @@
 import Searchbar from '../Searchbar';
 import Icon from '../../assets/Icon';
-import { User } from 'lucide-react';
+import UserButton from '../UserButton';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import './index.css';
@@ -18,7 +18,7 @@ export default function Header() {
         <div className='flex justify-center gap-3'>
           {
             loginStatus ? 
-              <User className='bg-white rounded-full user-icon p-3' />
+              <UserButton />
               :
               (<>
                 <Link to="/login" className='hover:underline'>Login</Link>
