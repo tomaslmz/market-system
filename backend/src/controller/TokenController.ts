@@ -54,9 +54,21 @@ class TokenController {
         maxAge: 15000 * 60 * 60 * 24
       });
 
+      res.cookie('name', newUser.name, {
+        maxAge: 15000 * 60 * 60 * 24 
+      });
+
+      res.cookie('email', email, {
+        maxAge: 15000 * 60 * 60 * 24 
+      });
+
+      res.cookie('loginStatus', 'true', {
+        maxAge: 15000 * 60 * 60 * 24 
+      });
+
       return res.json({ 
         status: 'Ok!',
-        message: 'Token has been created successfull',
+        message: 'Your session has been authenticated',
         data: {
           token,
           user: {
