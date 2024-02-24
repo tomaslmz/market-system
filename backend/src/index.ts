@@ -33,7 +33,7 @@ class App {
   protected plugins(): void {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use('/images/', express.static(resolve('..', 'uploads', 'images')));
+    this.app.use('/images/', express.static(resolve('uploads', 'images')));
     this.app.use(cors(options));
   }
 

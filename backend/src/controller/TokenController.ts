@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import env from '../env';
 
 import User from '../models/User';
+import UserPhoto from '../models/UserPhoto';
 
 declare module 'express-serve-static-core' {
     interface Request {
@@ -27,6 +28,10 @@ class TokenController {
       const newUser = await User.findOne({
         where: {
           email
+        },
+        include: {
+          model: UserPhoto,
+          as: 'photo',
         }
       });
 
@@ -66,6 +71,10 @@ class TokenController {
         maxAge: 15000 * 60 * 60 * 24 
       });
 
+      res.cookie('photo', newUser.photo?.url, {
+        maxAge: 15000 * 60 * 60 * 24
+      });
+
       return res.json({ 
         status: 'Ok!',
         message: 'Your session has been authenticated',
@@ -89,6 +98,10 @@ class TokenController {
   async delete(req: Request, res: Response) {
     try {
       res.clearCookie('auth');
+      res.clearCookie('name');
+      res.clearCookie('email');
+      res.clearCookie('loginStatus');
+      res.clearCookie('photo');
 
       res.status(200).json({
         status: 'Successfull logout!',
