@@ -1,8 +1,12 @@
 import './index.css';
 
-export default function Icon() {
+interface IconProps {
+  className?: string;
+}
+
+export default function Icon({ className }: IconProps) {
   return (
-    <svg version="1.1" id="svg2477" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1000 260.6" xmlSpace="preserve" className='icon'>
+    <svg version="1.1" id="svg2477" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1000 260.6" xmlSpace="preserve" className={`${className}`}>
       <g id="layer1" transform="translate(-14.48 -12.468)">
         <g id="g1222" transform="matrix(2.447 0 0 -2.447 79.174 33.624)">
           <path id="path1224" className="st0" d="M123.2-40.3c0 27-33.5 48.9-74.8 48.9s-74.8-22-74.8-48.9v-2.9C-26.4-71.8 2.9-95 48.4-95c45.8 0 74.8 23.2 74.8 51.8v2.9z" />

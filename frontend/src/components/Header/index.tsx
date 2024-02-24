@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="w-full-screen bg-blue-500 p-5">
       <div className='flex gap-3 items-center'>
-        <Icon />
+        <Icon className='w-1/3 max-w-32' />
         <Searchbar />
         <div className='flex justify-center gap-3'>
           {/* <User className='bg-white rounded-full user-icon p-3' /> */}
