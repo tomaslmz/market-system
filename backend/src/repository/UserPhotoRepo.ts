@@ -14,7 +14,7 @@ export default class SupplierPhotoRepo implements ISupplierPhotoRepo {
         user_id: userPhoto.user_id
       });
     } catch(err: any) {
-      throw new Error(`Failed to upload this supplier photo! ${err}`);
+      throw new Error(`Failed to upload this user photo! ${err}`);
     }
   }
 
@@ -22,12 +22,12 @@ export default class SupplierPhotoRepo implements ISupplierPhotoRepo {
     try {
       const newUserPhoto = await UserPhoto.findOne({
         where: {
-          id
+          user_id: id
         }
       });
 
       if(!newUserPhoto) {
-        throw new Error('Supplier photo not found!');
+        throw new Error('User photo not found!');
       }
 
       newUserPhoto.destroy();
