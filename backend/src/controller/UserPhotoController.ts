@@ -34,11 +34,13 @@ class SupplierPhotoController {
     try {
       const newUserPhoto = await UserPhoto.findOne({
         where: {
-          id: req.user.id
+          user_id: req.user.id
         }
       });
 
       await new UserPhotoRepo().delete(req.user.id);
+
+      res.clearCookie('photo');
 
       fs.unlink(`./uploads/images/${newUserPhoto?.filename}`, (e) => console.log(e));
       res.status(200).json({
