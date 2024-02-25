@@ -7,6 +7,7 @@ import './index.css';
 import { Menu, X } from 'lucide-react';
 import HamburgerMenu from '../HamburgerMenu';
 import { useState } from 'react';
+import Logo from '../../assets/logo.png';
 
 export default function Header() {
   const cookies = new Cookies();
@@ -28,6 +29,7 @@ export default function Header() {
       <div className='w-full bg-blue-500 p-5'>
         <div className='flex gap-3 items-center justify-between'>
           <Icon className='w-1/3 max-w-32 sm:hidden' />
+          <img src={Logo} alt="" className='w-12 md:hidden lg:hidden' />
           <Searchbar />
           <div className='flex justify-center gap-3 sm:hidden'>
             {
