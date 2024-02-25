@@ -46,7 +46,7 @@ export default function Register() {
       <div className='w-screen h-screen bg-blue-500'>
         <main className="w-screen h-screen flex justify-center items-center">
           <Icon className='max-w-48 fixed left-1 top-4' />
-          <form className='bg-white h-auto p-6 w-2/4 rounded-xl flex flex-col mx-auto max-w-lg justify-center gap-8' onSubmit={handleSubmit(registerRequest)}>
+          <form className='bg-white h-auto p-6 md:w-2/4 lg:w-2/4 sm:w-5/6 rounded-xl flex flex-col mx-auto max-w-lg justify-center gap-8' onSubmit={handleSubmit(registerRequest)}>
             <h1 className='font-bold text-lg text-center'>Register</h1>
             <div>
               <label htmlFor="name">Name</label>
