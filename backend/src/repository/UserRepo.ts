@@ -38,7 +38,12 @@ export default class UserRepo implements iUserRepo {
 
       newUser.name = user.name;
       newUser.email = user.email;
-      newUser.password = user.password;
+
+      if(user.password) {
+        console.log('aqui');
+        newUser.password = user.password;
+      }
+
       newUser.balance = user.balance;
 
       await newUser.save();

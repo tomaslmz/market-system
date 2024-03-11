@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import Database from './config/database';
 import { resolve } from 'path';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 import AdministratorRouter from './router/AdministratorRouter';
 import TokenRouter from './router/TokenRouter';
@@ -33,6 +34,7 @@ class App {
   protected plugins(): void {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(cookieParser());
     this.app.use('/images/', express.static(resolve('uploads', 'images')));
     this.app.use(cors(options));
   }
